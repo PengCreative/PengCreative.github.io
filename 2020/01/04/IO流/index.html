@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>Java IO流 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Java流类图结构 流的分类根据处理数据类型的不同分为：字符流和字节流 根据数据流向不同分为：输入流和输出流 字符流和字节流*字节流 *: 字节流可以操作任何数据,因为在计算机中任何数据都是以字节的形式存储的*字符流 *: 字符流只能操作纯字符数据，比较方便。 字符流的由来： 因为数据编码的不同，而有了对字符进行高效操作的流对象。本质其实就是基于字节流读取时，去查了指定的码表。字节流和字符流的区别">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Java IO流">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;01&#x2F;04&#x2F;IO%E6%B5%81&#x2F;index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="Java流类图结构 流的分类根据处理数据类型的不同分为：字符流和字节流 根据数据流向不同分为：输入流和输出流 字符流和字节流*字节流 *: 字节流可以操作任何数据,因为在计算机中任何数据都是以字节的形式存储的*字符流 *: 字符流只能操作纯字符数据，比较方便。 字符流的由来： 因为数据编码的不同，而有了对字符进行高效操作的流对象。本质其实就是基于字节流读取时，去查了指定的码表。字节流和字符流的区别">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;01&#x2F;04&#x2F;IO%E6%B5%81&#x2F;C:%5CUsers%5Ccy157%5CDesktop%5CIO%E6%B5%81.jpg">
+<meta property="article:published_time" content="2020-01-04T14:47:41.000Z">
+<meta property="article:modified_time" content="2020-01-04T14:39:04.191Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;01&#x2F;04&#x2F;IO%E6%B5%81&#x2F;C:%5CUsers%5Ccy157%5CDesktop%5CIO%E6%B5%81.jpg">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 4.1.1"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-IO流" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/01/04/IO%E6%B5%81/" class="article-date">
+  <time datetime="2020-01-04T14:47:41.000Z" itemprop="datePublished">2020-01-04</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Java IO流
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="Java流类图结构"><a href="#Java流类图结构" class="headerlink" title="Java流类图结构"></a>Java流类图结构</h2><p><img src="/2020/01/04/IO%E6%B5%81/C:%5CUsers%5Ccy157%5CDesktop%5CIO%E6%B5%81.jpg" alt></p>
+<h2 id="流的分类"><a href="#流的分类" class="headerlink" title="流的分类"></a>流的分类</h2><p>根据<strong>处理数据类型</strong>的不同分为：<strong>字符流</strong>和<strong>字节流</strong></p>
+<p>根据<strong>数据流向不同</strong>分为：<strong>输入流</strong>和<strong>输出流</strong></p>
+<h4 id="字符流和字节流"><a href="#字符流和字节流" class="headerlink" title="字符流和字节流"></a>字符流和字节流</h4><p>*<em>字节流 *</em>: 字节流可以操作任何数据,因为在计算机中任何数据都是以字节的形式存储的<br>*<em>字符流 *</em>: 字符流只能操作纯字符数据，比较方便。</p>
+<p>字符流的由来： 因为数据编码的不同，而有了对字符进行高效操作的流对象。本质其实就是基于字节流读取时，去查了指定的码表。字节流和字符流的区别：</p>
+<p>（1）读写单位不同：<strong>字节流以字节（8bit）为单位，字符流以字符为单位</strong>，根据码表映射字符，一次可能读多个字节。</p>
+<p>（2）处理对象不同：<strong>字节流能处理所有类型的数据（如图片、avi等），而字符流只能处理字符类型的数据</strong>。</p>
+<p>（3）字节流在操作的时候本身是不会用到缓冲区的，是文件本身的直接操作的；而字符流在操作的时候之后是会用到缓冲区的，是通过缓冲区来操作文件，我们将在下面验证这一点。</p>
+<p>结论：<strong>优先选用字节流</strong>。首先因为硬盘上的所有文件都是以字节的形式进行传输或者保存的，包括图片等内容。但是字符只是在内存中才会形成的，所以在开发中，字节流使用广泛。</p>
+<h4 id="输入流和输出流"><a href="#输入流和输出流" class="headerlink" title="输入流和输出流"></a>输入流和输出流</h4><p>对<strong>输入流</strong>只能进行<strong>读操作</strong>，对<strong>输出流</strong>只能进行<strong>写操作</strong>，程序中需要根据待传输数据的不同特性而使用不同的流。</p>
+<h2 id="Java-IO流对象"><a href="#Java-IO流对象" class="headerlink" title="Java IO流对象"></a>Java IO流对象</h2><h4 id="字符流的抽象父类"><a href="#字符流的抽象父类" class="headerlink" title="字符流的抽象父类"></a>字符流的抽象父类</h4><ul>
+<li><p><strong>InputStream</strong></p>
+</li>
+<li><p><strong>OutputStream</strong></p>
+</li>
+</ul>
+<ol>
+<li><p><strong>输入字节流InputStream</strong></p>
+<p><strong>InputStream</strong>是所有的输入字节流的父类，它是一个抽象类。</p>
+<p>ByteArrayInputStream、StringBufferInputStream、FileInputStream 是三种基本的介质流，它们分别从Byte 数组、StringBuffer、和本地文件中读取数据。PipedInputStream 是从与其它线程共用的管道中读取数据</p>
+<p>ObjectInputStream 和所有FilterInputStream的子类都是装饰流（装饰器模式的主角）。意思是FileInputStream类可以通过一个String路径名创建一个对象，FileInputStream(String name)。而DataInputStream必须装饰一个类才能返回一个对象，DataInputStream(InputStream in)。</p>
+<p>实例操作演示：<br>【案例 】读取文件内容</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 字节流</span></span><br><span class="line"><span class="comment"> * 读文件内容</span></span><br><span class="line"><span class="comment"> * */</span></span><br><span class="line"><span class="keyword">import</span> java.io.*;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">hello</span></span>&#123;</span><br><span class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> IOException </span>&#123;</span><br><span class="line">       <span class="comment">//建立流通道，读取D:\hello.txt文件内容，由于每个系统目录的分隔符的识别不同，这里用File.separator表示‘\’，通过构造方法指定要访问的文件，如果文件不存在会抛出异常</span></span><br><span class="line">       String fileName=<span class="string">"D:"</span>+File.separator+<span class="string">"hello.txt"</span>;</span><br><span class="line">       File f=<span class="keyword">new</span> File(fileName);</span><br><span class="line">       InputStream in=<span class="keyword">new</span> FileInputStream(f);</span><br><span class="line">       <span class="keyword">byte</span>[] b=<span class="keyword">new</span> <span class="keyword">byte</span>[<span class="number">1024</span>];<span class="comment">//创建字节数组，长度为1024</span></span><br><span class="line">       in.read(b);<span class="comment">//read()从文件中读取1024个字节，并把读到的字节返回</span></span><br><span class="line">       in.close();<span class="comment">//关闭流通道</span></span><br><span class="line">       System.out.println(<span class="keyword">new</span> String(b));<span class="comment">//将byte数组转为String数组并打印</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">注意：该示例中由于b字节数组长度为1024，如果文件较小，则会有大量填充空格。我们可以利用in.read(b);的返回值来设计程序，如下案例：</span><br><span class="line"></span><br><span class="line">【案例】读取文件内容</span><br><span class="line"></span><br><span class="line">&#96;&#96;&#96;java</span><br><span class="line">&#x2F;**</span><br><span class="line"> * 字节流</span><br><span class="line"> * 读文件内容</span><br><span class="line"> * *&#x2F;</span><br><span class="line">import java.io.*;</span><br><span class="line">class hello&#123;</span><br><span class="line">   public static void main(String[] args) throws IOException &#123;</span><br><span class="line">       String fileName&#x3D;&quot;D:&quot;+File.separator+&quot;hello.txt&quot;;</span><br><span class="line">       File f&#x3D;new File(fileName);</span><br><span class="line">       InputStream in&#x3D;new FileInputStream(f);</span><br><span class="line">       byte[] b&#x3D;new byte[1024];</span><br><span class="line">       int len&#x3D;in.read(b);</span><br><span class="line">       in.close();</span><br><span class="line">       System.out.println(&quot;读入长度为：&quot;+len);</span><br><span class="line">       System.out.println(new String(b,0,len));</span><br><span class="line">       &#x2F;*String(byte[] bytes, int offset, int length) 通过使用平台的默认字符集解码指定的 byte 子数组，长度为len,构造一个新的 String。*&#x2F;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>注意：观察上面的例子可以看出，我们预先申请了一个指定大小的空间，但是有时候这个空间可能太小，有时候可能太大，我们需要准确的大小，这样节省空间，那么我们可以这样做：</p>
+<p>【案例】读取文件内容</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 字节流</span></span><br><span class="line"><span class="comment"> * 读文件内容,节省空间</span></span><br><span class="line"><span class="comment"> * */</span></span><br><span class="line"><span class="keyword">import</span> java.io.*;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">hello</span></span>&#123;</span><br><span class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> IOException </span>&#123;</span><br><span class="line">       String fileName=<span class="string">"D:"</span>+File.separator+<span class="string">"hello.txt"</span>;</span><br><span class="line">       File f=<span class="keyword">new</span> File(fileName);</span><br><span class="line">       InputStream in=<span class="keyword">new</span> FileInputStream(f);</span><br><span class="line">       <span class="keyword">byte</span>[] b=<span class="keyword">new</span> <span class="keyword">byte</span>[(<span class="keyword">int</span>)f.length()];<span class="comment">//将File类型转为int，byte数组长度为文件字长度</span></span><br><span class="line">       in.read(b);</span><br><span class="line">       System.out.println(<span class="string">"文件长度为："</span>+f.length());</span><br><span class="line">       in.close();</span><br><span class="line">       System.out.println(<span class="keyword">new</span> String(b));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>【案例】逐字节读</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 字节流</span></span><br><span class="line"><span class="comment"> * 读文件内容,节省空间</span></span><br><span class="line"><span class="comment"> * */</span></span><br><span class="line"><span class="keyword">import</span> java.io.*;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">hello</span></span>&#123;</span><br><span class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> IOException </span>&#123;</span><br><span class="line">       String fileName=<span class="string">"D:"</span>+File.separator+<span class="string">"hello.txt"</span>;</span><br><span class="line">       File f=<span class="keyword">new</span> File(fileName);</span><br><span class="line">       InputStream in=<span class="keyword">new</span> FileInputStream(f);</span><br><span class="line">       <span class="keyword">byte</span>[] b=<span class="keyword">new</span> <span class="keyword">byte</span>[(<span class="keyword">int</span>)f.length()];</span><br><span class="line">       <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; b.length; i++) &#123;</span><br><span class="line">           b[i]=(<span class="keyword">byte</span>)in.read();</span><br><span class="line">       &#125;</span><br><span class="line">       in.close();</span><br><span class="line">       System.out.println(<span class="keyword">new</span> String(b));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>注意：上面的几个例子都是在知道文件的内容多大，然后才展开的，有时候我们不知道文件有多大，这种情况下，我们需要判断是否独到文件的末尾。</p>
+<p>【案例】字节流读取文件</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 字节流</span></span><br><span class="line"><span class="comment"> *读文件</span></span><br><span class="line"><span class="comment"> * */</span></span><br><span class="line"><span class="keyword">import</span> java.io.*;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">hello</span></span>&#123;</span><br><span class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> IOException </span>&#123;</span><br><span class="line">       String fileName=<span class="string">"D:"</span>+File.separator+<span class="string">"hello.txt"</span>;</span><br><span class="line">       File f=<span class="keyword">new</span> File(fileName);</span><br><span class="line">       InputStream in=<span class="keyword">new</span> FileInputStream(f);</span><br><span class="line">       <span class="keyword">byte</span>[] b=<span class="keyword">new</span> <span class="keyword">byte</span>[<span class="number">1024</span>];</span><br><span class="line">       <span class="keyword">int</span> count =<span class="number">0</span>;</span><br><span class="line">       <span class="keyword">int</span> temp=<span class="number">0</span>;</span><br><span class="line">       <span class="keyword">while</span>((temp=in.read())!=(-<span class="number">1</span>))&#123;</span><br><span class="line">           b[count++]=(<span class="keyword">byte</span>)temp;</span><br><span class="line">       &#125;</span><br><span class="line">       in.close();</span><br><span class="line">       System.out.println(<span class="keyword">new</span> String(b));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>注意：当读到文件末尾的时候会返回-1.正常情况下是不会返回-1的。</p>
+</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2020/01/04/IO%E6%B5%81/" data-id="ck4zotr0c0000fwtae0jnagbr" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2020/05/11/%E7%BA%BF%E7%A8%8B/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          线程
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2019/12/29/%E7%BA%BF%E7%A8%8B%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">线程生命周期</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/05/">May 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/01/">January 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/12/">December 2019</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2020/05/11/%E7%BA%BF%E7%A8%8B/">线程</a>
+          </li>
+        
+          <li>
+            <a href="/2020/01/04/IO%E6%B5%81/">Java IO流</a>
+          </li>
+        
+          <li>
+            <a href="/2019/12/29/%E7%BA%BF%E7%A8%8B%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/">线程生命周期</a>
+          </li>
+        
+          <li>
+            <a href="/2019/12/23/CentOS7%E6%90%AD%E5%BB%BAWeb%E6%9C%8D%E5%8A%A1%E5%99%A8/">CentOS7搭建Web服务器</a>
+          </li>
+        
+          <li>
+            <a href="/2019/12/18/hello-world/">Hello World</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2020 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>
