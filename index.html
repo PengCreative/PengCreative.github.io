@@ -64,155 +64,6 @@
       <div class="outer">
         <section id="main">
   
-    <article id="post-IO流" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2020/01/04/IO%E6%B5%81/" class="article-date">
-  <time datetime="2020-01-04T14:47:41.000Z" itemprop="datePublished">2020-01-04</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/01/04/IO%E6%B5%81/">Java IO流</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="Java流类图结构"><a href="#Java流类图结构" class="headerlink" title="Java流类图结构"></a>Java流类图结构</h2><p><img src="/2020/01/04/IO%E6%B5%81/C:%5CUsers%5Ccy157%5CDesktop%5CIO%E6%B5%81.jpg" alt></p>
-<h2 id="流的分类"><a href="#流的分类" class="headerlink" title="流的分类"></a>流的分类</h2><p>根据<strong>处理数据类型</strong>的不同分为：<strong>字符流</strong>和<strong>字节流</strong></p>
-<p>根据<strong>数据流向不同</strong>分为：<strong>输入流</strong>和<strong>输出流</strong></p>
-<h4 id="字符流和字节流"><a href="#字符流和字节流" class="headerlink" title="字符流和字节流"></a>字符流和字节流</h4><p>*<em>字节流 *</em>: 字节流可以操作任何数据,因为在计算机中任何数据都是以字节的形式存储的<br>*<em>字符流 *</em>: 字符流只能操作纯字符数据，比较方便。</p>
-<p>字符流的由来： 因为数据编码的不同，而有了对字符进行高效操作的流对象。本质其实就是基于字节流读取时，去查了指定的码表。字节流和字符流的区别：</p>
-<p>（1）读写单位不同：<strong>字节流以字节（8bit）为单位，字符流以字符为单位</strong>，根据码表映射字符，一次可能读多个字节。</p>
-<p>（2）处理对象不同：<strong>字节流能处理所有类型的数据（如图片、avi等），而字符流只能处理字符类型的数据</strong>。</p>
-<p>（3）字节流在操作的时候本身是不会用到缓冲区的，是文件本身的直接操作的；而字符流在操作的时候之后是会用到缓冲区的，是通过缓冲区来操作文件，我们将在下面验证这一点。</p>
-<p>结论：<strong>优先选用字节流</strong>。首先因为硬盘上的所有文件都是以字节的形式进行传输或者保存的，包括图片等内容。但是字符只是在内存中才会形成的，所以在开发中，字节流使用广泛。</p>
-<h4 id="输入流和输出流"><a href="#输入流和输出流" class="headerlink" title="输入流和输出流"></a>输入流和输出流</h4><p>对<strong>输入流</strong>只能进行<strong>读操作</strong>，对<strong>输出流</strong>只能进行<strong>写操作</strong>，程序中需要根据待传输数据的不同特性而使用不同的流。</p>
-<h2 id="Java-IO流对象"><a href="#Java-IO流对象" class="headerlink" title="Java IO流对象"></a>Java IO流对象</h2><h4 id="字符流的抽象父类"><a href="#字符流的抽象父类" class="headerlink" title="字符流的抽象父类"></a>字符流的抽象父类</h4><ul>
-<li><p><strong>InputStream</strong></p>
-</li>
-<li><p><strong>OutputStream</strong></p>
-</li>
-</ul>
-<ol>
-<li><p><strong>输入字节流InputStream</strong></p>
-<p><strong>InputStream</strong>是所有的输入字节流的父类，它是一个抽象类。</p>
-<p>ByteArrayInputStream、StringBufferInputStream、FileInputStream 是三种基本的介质流，它们分别从Byte 数组、StringBuffer、和本地文件中读取数据。PipedInputStream 是从与其它线程共用的管道中读取数据</p>
-<p>ObjectInputStream 和所有FilterInputStream的子类都是装饰流（装饰器模式的主角）。意思是FileInputStream类可以通过一个String路径名创建一个对象，FileInputStream(String name)。而DataInputStream必须装饰一个类才能返回一个对象，DataInputStream(InputStream in)。</p>
-<p>实例操作演示：<br>【案例 】读取文件内容</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 字节流</span></span><br><span class="line"><span class="comment"> * 读文件内容</span></span><br><span class="line"><span class="comment"> * */</span></span><br><span class="line"><span class="keyword">import</span> java.io.*;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">hello</span></span>&#123;</span><br><span class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> IOException </span>&#123;</span><br><span class="line">       <span class="comment">//建立流通道，读取D:\hello.txt文件内容，由于每个系统目录的分隔符的识别不同，这里用File.separator表示‘\’，通过构造方法指定要访问的文件，如果文件不存在会抛出异常</span></span><br><span class="line">       String fileName=<span class="string">"D:"</span>+File.separator+<span class="string">"hello.txt"</span>;</span><br><span class="line">       File f=<span class="keyword">new</span> File(fileName);</span><br><span class="line">       InputStream in=<span class="keyword">new</span> FileInputStream(f);</span><br><span class="line">       <span class="keyword">byte</span>[] b=<span class="keyword">new</span> <span class="keyword">byte</span>[<span class="number">1024</span>];<span class="comment">//创建字节数组，长度为1024</span></span><br><span class="line">       in.read(b);<span class="comment">//read()从文件中读取1024个字节，并把读到的字节返回</span></span><br><span class="line">       in.close();<span class="comment">//关闭流通道</span></span><br><span class="line">       System.out.println(<span class="keyword">new</span> String(b));<span class="comment">//将byte数组转为String数组并打印</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">注意：该示例中由于b字节数组长度为1024，如果文件较小，则会有大量填充空格。我们可以利用in.read(b);的返回值来设计程序，如下案例：</span><br><span class="line"></span><br><span class="line">【案例】读取文件内容</span><br><span class="line"></span><br><span class="line">&#96;&#96;&#96;java</span><br><span class="line">&#x2F;**</span><br><span class="line"> * 字节流</span><br><span class="line"> * 读文件内容</span><br><span class="line"> * *&#x2F;</span><br><span class="line">import java.io.*;</span><br><span class="line">class hello&#123;</span><br><span class="line">   public static void main(String[] args) throws IOException &#123;</span><br><span class="line">       String fileName&#x3D;&quot;D:&quot;+File.separator+&quot;hello.txt&quot;;</span><br><span class="line">       File f&#x3D;new File(fileName);</span><br><span class="line">       InputStream in&#x3D;new FileInputStream(f);</span><br><span class="line">       byte[] b&#x3D;new byte[1024];</span><br><span class="line">       int len&#x3D;in.read(b);</span><br><span class="line">       in.close();</span><br><span class="line">       System.out.println(&quot;读入长度为：&quot;+len);</span><br><span class="line">       System.out.println(new String(b,0,len));</span><br><span class="line">       &#x2F;*String(byte[] bytes, int offset, int length) 通过使用平台的默认字符集解码指定的 byte 子数组，长度为len,构造一个新的 String。*&#x2F;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>注意：观察上面的例子可以看出，我们预先申请了一个指定大小的空间，但是有时候这个空间可能太小，有时候可能太大，我们需要准确的大小，这样节省空间，那么我们可以这样做：</p>
-<p>【案例】读取文件内容</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 字节流</span></span><br><span class="line"><span class="comment"> * 读文件内容,节省空间</span></span><br><span class="line"><span class="comment"> * */</span></span><br><span class="line"><span class="keyword">import</span> java.io.*;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">hello</span></span>&#123;</span><br><span class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> IOException </span>&#123;</span><br><span class="line">       String fileName=<span class="string">"D:"</span>+File.separator+<span class="string">"hello.txt"</span>;</span><br><span class="line">       File f=<span class="keyword">new</span> File(fileName);</span><br><span class="line">       InputStream in=<span class="keyword">new</span> FileInputStream(f);</span><br><span class="line">       <span class="keyword">byte</span>[] b=<span class="keyword">new</span> <span class="keyword">byte</span>[(<span class="keyword">int</span>)f.length()];<span class="comment">//将File类型转为int，byte数组长度为文件字长度</span></span><br><span class="line">       in.read(b);</span><br><span class="line">       System.out.println(<span class="string">"文件长度为："</span>+f.length());</span><br><span class="line">       in.close();</span><br><span class="line">       System.out.println(<span class="keyword">new</span> String(b));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>【案例】逐字节读</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 字节流</span></span><br><span class="line"><span class="comment"> * 读文件内容,节省空间</span></span><br><span class="line"><span class="comment"> * */</span></span><br><span class="line"><span class="keyword">import</span> java.io.*;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">hello</span></span>&#123;</span><br><span class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> IOException </span>&#123;</span><br><span class="line">       String fileName=<span class="string">"D:"</span>+File.separator+<span class="string">"hello.txt"</span>;</span><br><span class="line">       File f=<span class="keyword">new</span> File(fileName);</span><br><span class="line">       InputStream in=<span class="keyword">new</span> FileInputStream(f);</span><br><span class="line">       <span class="keyword">byte</span>[] b=<span class="keyword">new</span> <span class="keyword">byte</span>[(<span class="keyword">int</span>)f.length()];</span><br><span class="line">       <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; b.length; i++) &#123;</span><br><span class="line">           b[i]=(<span class="keyword">byte</span>)in.read();</span><br><span class="line">       &#125;</span><br><span class="line">       in.close();</span><br><span class="line">       System.out.println(<span class="keyword">new</span> String(b));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>注意：上面的几个例子都是在知道文件的内容多大，然后才展开的，有时候我们不知道文件有多大，这种情况下，我们需要判断是否独到文件的末尾。</p>
-<p>【案例】字节流读取文件</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 字节流</span></span><br><span class="line"><span class="comment"> *读文件</span></span><br><span class="line"><span class="comment"> * */</span></span><br><span class="line"><span class="keyword">import</span> java.io.*;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">hello</span></span>&#123;</span><br><span class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> IOException </span>&#123;</span><br><span class="line">       String fileName=<span class="string">"D:"</span>+File.separator+<span class="string">"hello.txt"</span>;</span><br><span class="line">       File f=<span class="keyword">new</span> File(fileName);</span><br><span class="line">       InputStream in=<span class="keyword">new</span> FileInputStream(f);</span><br><span class="line">       <span class="keyword">byte</span>[] b=<span class="keyword">new</span> <span class="keyword">byte</span>[<span class="number">1024</span>];</span><br><span class="line">       <span class="keyword">int</span> count =<span class="number">0</span>;</span><br><span class="line">       <span class="keyword">int</span> temp=<span class="number">0</span>;</span><br><span class="line">       <span class="keyword">while</span>((temp=in.read())!=(-<span class="number">1</span>))&#123;</span><br><span class="line">           b[count++]=(<span class="keyword">byte</span>)temp;</span><br><span class="line">       &#125;</span><br><span class="line">       in.close();</span><br><span class="line">       System.out.println(<span class="keyword">new</span> String(b));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>注意：当读到文件末尾的时候会返回-1.正常情况下是不会返回-1的。</p>
-</li>
-</ol>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/01/04/IO%E6%B5%81/" data-id="ck4zotr0c0000fwtae0jnagbr" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-线程生命周期" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/12/29/%E7%BA%BF%E7%A8%8B%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/" class="article-date">
-  <time datetime="2019-12-29T13:07:41.000Z" itemprop="datePublished">2019-12-29</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/12/29/%E7%BA%BF%E7%A8%8B%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/">线程生命周期</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><img src="/2019/12/29/%E7%BA%BF%E7%A8%8B%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/1.jpg" alt></p>
-<ul>
-<li>新建状态:</li>
-</ul>
-<p>使用 <strong>new</strong> 关键字和 <strong>Thread</strong> 类或其子类建立一个线程对象后，该线程对象就处于新建状态。它保持这个状态直到程序 <strong>start()</strong> 这个线程。</p>
-<ul>
-<li><p>就绪状态:</p>
-<p>当线程对象调用了start()方法之后，该线程就进入就绪状态。就绪状态的线程处于就绪队列中，要等待JVM里线程调度器的调度。</p>
-</li>
-<li><p>运行状态:</p>
-<p>如果就绪状态的线程获取 CPU 资源，就可以执行 <strong>run()</strong>，此时线程便处于运行状态。处于运行状态的线程最为复杂，它可以变为阻塞状态、就绪状态和死亡状态。</p>
-</li>
-<li><p>阻塞状态:</p>
-<p>如果一个线程执行了sleep（睡眠）、suspend（挂起）等方法，失去所占用资源之后，该线程就从运行状态进入阻塞状态。在睡眠时间已到或获得设备资源后可以重新进入就绪状态。可以分为三种：</p>
-<ul>
-<li>等待阻塞：运行状态中的线程执行 wait() 方法，使线程进入到等待阻塞状态。</li>
-<li>同步阻塞：线程在获取 synchronized 同步锁失败(因为同步锁被其他线程占用)。</li>
-<li>其他阻塞：通过调用线程的 sleep() 或 join() 发出了 I/O 请求时，线程就会进入到阻塞状态。当sleep() 状态超时，join() 等待线程终止或超时，或者 I/O 处理完毕，线程重新转入就绪状态。</li>
-</ul>
-</li>
-<li><p>死亡状态:</p>
-<p>一个运行状态的线程完成任务或者其他终止条件发生时，该线程就切换到终止状态。</p>
-</li>
-</ul>
-<h2 id="创建一个线程"><a href="#创建一个线程" class="headerlink" title="创建一个线程"></a>创建一个线程</h2><p><strong>Java 提供了三种创建线程的方法：</strong></p>
-<ul>
-<li><p>通过实现 Runnable 接口；</p>
-</li>
-<li><p>通过继承 Thread 类本身；</p>
-</li>
-<li><p>通过 Callable 和 Future 创建线程。</p>
-</li>
-</ul>
-<h2 id="Thread的多线程示例"><a href="#Thread的多线程示例" class="headerlink" title="Thread的多线程示例"></a>Thread的多线程示例</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// ThreadTest.java 源码</span></span><br><span class="line"> <span class="number">2</span> <span class="class"><span class="keyword">class</span> <span class="title">MyThread</span> <span class="keyword">extends</span> <span class="title">Thread</span></span>&#123;  </span><br><span class="line"> <span class="number">3</span>     <span class="keyword">private</span> <span class="keyword">int</span> ticket=<span class="number">10</span>;  </span><br><span class="line"> <span class="number">4</span>     <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span></span>&#123;</span><br><span class="line"> <span class="number">5</span>         <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;<span class="number">20</span>;i++)&#123; </span><br><span class="line"> <span class="number">6</span>             <span class="keyword">if</span>(<span class="keyword">this</span>.ticket&gt;<span class="number">0</span>)&#123;</span><br><span class="line"> <span class="number">7</span>                 System.out.println(<span class="keyword">this</span>.getName()+<span class="string">" 卖票：ticket"</span>+<span class="keyword">this</span>.ticket--);</span><br><span class="line"> <span class="number">8</span>             &#125;</span><br><span class="line"> <span class="number">9</span>         &#125;</span><br><span class="line"><span class="number">10</span>     &#125; </span><br><span class="line"><span class="number">11</span> &#125;;</span><br><span class="line"><span class="number">12</span> </span><br><span class="line"><span class="number">13</span> <span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ThreadTest</span> </span>&#123;  </span><br><span class="line"><span class="number">14</span>     <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;  </span><br><span class="line"><span class="number">15</span>         <span class="comment">// 启动3个线程t1,t2,t3；每个线程各卖10张票！</span></span><br><span class="line"><span class="number">16</span>         MyThread t1=<span class="keyword">new</span> MyThread();</span><br><span class="line"><span class="number">17</span>         MyThread t2=<span class="keyword">new</span> MyThread();</span><br><span class="line"><span class="number">18</span>         MyThread t3=<span class="keyword">new</span> MyThread();</span><br><span class="line"><span class="number">19</span>         t1.start();</span><br><span class="line"><span class="number">20</span>         t2.start();</span><br><span class="line"><span class="number">21</span>         t3.start();</span><br><span class="line"><span class="number">22</span>     &#125;  </span><br><span class="line"><span class="number">23</span> &#125;</span><br></pre></td></tr></table></figure>
-
-<p><strong>运行结果</strong>：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">Thread-<span class="number">0</span> 卖票：ticket10</span><br><span class="line">Thread-<span class="number">1</span> 卖票：ticket10</span><br><span class="line">Thread-<span class="number">2</span> 卖票：ticket10</span><br><span class="line">Thread-<span class="number">1</span> 卖票：ticket9</span><br><span class="line">Thread-<span class="number">0</span> 卖票：ticket9</span><br><span class="line">Thread-<span class="number">1</span> 卖票：ticket8</span><br><span class="line">Thread-<span class="number">2</span> 卖票：ticket9</span><br><span class="line">Thread-<span class="number">1</span> 卖票：ticket7</span><br><span class="line">Thread-<span class="number">0</span> 卖票：ticket8</span><br><span class="line">Thread-<span class="number">1</span> 卖票：ticket6</span><br><span class="line">Thread-<span class="number">2</span> 卖票：ticket8</span><br><span class="line">Thread-<span class="number">1</span> 卖票：ticket5</span><br><span class="line">Thread-<span class="number">0</span> 卖票：ticket7</span><br><span class="line">Thread-<span class="number">1</span> 卖票：ticket4</span><br><span class="line">Thread-<span class="number">2</span> 卖票：ticket7</span><br><span class="line">Thread-<span class="number">1</span> 卖票：ticket3</span><br><span class="line">Thread-<span class="number">0</span> 卖票：ticket6</span><br><span class="line">Thread-<span class="number">1</span> 卖票：ticket2</span><br><span class="line">Thread-<span class="number">2</span> 卖票：ticket6</span><br><span class="line">Thread-<span class="number">2</span> 卖票：ticket5</span><br><span class="line">Thread-<span class="number">2</span> 卖票：ticket4</span><br><span class="line">Thread-<span class="number">1</span> 卖票：ticket1</span><br><span class="line">Thread-<span class="number">0</span> 卖票：ticket5</span><br><span class="line">Thread-<span class="number">2</span> 卖票：ticket3</span><br><span class="line">Thread-<span class="number">0</span> 卖票：ticket4</span><br><span class="line">Thread-<span class="number">2</span> 卖票：ticket2</span><br><span class="line">Thread-<span class="number">0</span> 卖票：ticket3</span><br><span class="line">Thread-<span class="number">2</span> 卖票：ticket1</span><br><span class="line">Thread-<span class="number">0</span> 卖票：ticket2</span><br><span class="line">Thread-<span class="number">0</span> 卖票：ticket1</span><br></pre></td></tr></table></figure>
-
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/12/29/%E7%BA%BF%E7%A8%8B%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/" data-id="cka2hekqj0000yota6d0j0icy" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
     <article id="post-CentOS7搭建Web服务器" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2019/12/23/CentOS7%E6%90%AD%E5%BB%BAWeb%E6%9C%8D%E5%8A%A1%E5%99%A8/" class="article-date">
@@ -276,55 +127,6 @@
 
 
   
-    <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/12/18/hello-world/" class="article-date">
-  <time datetime="2019-12-18T01:48:44.626Z" itemprop="datePublished">2019-12-18</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/12/18/hello-world/">Hello World</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">java代码</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/12/18/hello-world/" data-id="ck4antjp600006gta7x5ig6i5" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
 
 
 </section>
@@ -343,7 +145,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/01/">January 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/12/">December 2019</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/12/">December 2019</a></li></ul>
     </div>
   </div>
 
@@ -356,19 +158,7 @@
       <ul>
         
           <li>
-            <a href="/2020/01/04/IO%E6%B5%81/">Java IO流</a>
-          </li>
-        
-          <li>
-            <a href="/2019/12/29/%E7%BA%BF%E7%A8%8B%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/">线程生命周期</a>
-          </li>
-        
-          <li>
             <a href="/2019/12/23/CentOS7%E6%90%AD%E5%BB%BAWeb%E6%9C%8D%E5%8A%A1%E5%99%A8/">CentOS7搭建Web服务器</a>
-          </li>
-        
-          <li>
-            <a href="/2019/12/18/hello-world/">Hello World</a>
           </li>
         
       </ul>
