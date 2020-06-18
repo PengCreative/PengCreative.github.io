@@ -1,294 +1,859 @@
-<!DOCTYPE html>
-<html>
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
 <head>
-  <meta charset="utf-8">
-  
+    <meta charset="utf-8">
+    <meta name="keywords" content="Hexo">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
 
-  
-  <title>Hexo</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;index.html">
-<meta property="og:site_name" content="Hexo">
-<meta property="og:locale" content="en_US">
-<meta property="article:author" content="John Doe">
-<meta name="twitter:card" content="summary">
-  
-    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
-  
-  
-    <link rel="icon" href="/favicon.png">
-  
-  
-    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
-  
-  
-<link rel="stylesheet" href="/css/style.css">
 
-<meta name="generator" content="Hexo 4.1.1"></head>
+    <title>Hexo</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+
+    <script src="/libs/jquery/jquery.min.js"></script>
+
+<meta name="generator" content="Hexo 4.1.1"><link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+</head>
+
 
 <body>
-  <div id="container">
-    <div id="wrap">
-      <header id="header">
-  <div id="banner"></div>
-  <div id="header-outer" class="outer">
-    <div id="header-title" class="inner">
-      <h1 id="logo-wrap">
-        <a href="/" id="logo">Hexo</a>
-      </h1>
-      
-    </div>
-    <div id="header-inner" class="inner">
-      <nav id="main-nav">
-        <a id="main-nav-toggle" class="nav-icon"></a>
-        
-          <a class="main-nav-link" href="/">Home</a>
-        
-          <a class="main-nav-link" href="/archives">Archives</a>
-        
-      </nav>
-      <nav id="sub-nav">
-        
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
-        
-        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
-      </nav>
-      <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
-      </div>
-    </div>
-  </div>
-</header>
-      <div class="outer">
-        <section id="main">
-  
-    <article id="post-基于JSP-JavaScript-servlet-jdbc技术的自助存取款系统小案例" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2020/05/14/%E5%9F%BA%E4%BA%8EJSP-JavaScript-servlet-jdbc%E6%8A%80%E6%9C%AF%E7%9A%84%E8%87%AA%E5%8A%A9%E5%AD%98%E5%8F%96%E6%AC%BE%E7%B3%BB%E7%BB%9F%E5%B0%8F%E6%A1%88%E4%BE%8B/" class="article-date">
-  <time datetime="2020-05-14T09:22:18.000Z" itemprop="datePublished">2020-05-14</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/05/14/%E5%9F%BA%E4%BA%8EJSP-JavaScript-servlet-jdbc%E6%8A%80%E6%9C%AF%E7%9A%84%E8%87%AA%E5%8A%A9%E5%AD%98%E5%8F%96%E6%AC%BE%E7%B3%BB%E7%BB%9F%E5%B0%8F%E6%A1%88%E4%BE%8B/">基于JSP-JavaScript-servlet-jdbc技术的自助存取款系统小案例</a>
-    </h1>
-  
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">Hexo</span>
+                </a>
+            </div>
+            
 
-      </header>
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
     
-    <div class="article-entry" itemprop="articleBody">
+    <a href="/" class="waves-effect waves-light">
       
-        <h3 id="一、语言和环境"><a href="#一、语言和环境" class="headerlink" title="一、语言和环境:"></a>一、语言和环境:</h3><p><strong>JDK1.8</strong>、<strong>Eclipse</strong>、<strong>Tomcat7</strong>、<strong>MySQL5.7</strong></p>
-<h3 id="二、数据库设计："><a href="#二、数据库设计：" class="headerlink" title="二、数据库设计："></a>二、数据库设计：</h3><p><strong>数据库名称：ebank</strong></p>
-<p><strong>数据库表信息，如下表：</strong></p>
-<p><img src="/2020/05/14/%E5%9F%BA%E4%BA%8EJSP-JavaScript-servlet-jdbc%E6%8A%80%E6%9C%AF%E7%9A%84%E8%87%AA%E5%8A%A9%E5%AD%98%E5%8F%96%E6%AC%BE%E7%B3%BB%E7%BB%9F%E5%B0%8F%E6%A1%88%E4%BE%8B/ebank.png" alt></p>
-<h3 id="三、要求"><a href="#三、要求" class="headerlink" title="三、要求"></a>三、要求</h3><p> <strong>基于JSP+servlet+jdbc技术的自助存取款系统包含如下功能：</strong></p>
-<ul>
-<li><p><strong>登录功能</strong></p>
-</li>
-<li><p><strong>存款功能</strong></p>
-</li>
-<li><p><strong>l取款功能</strong> </p>
-</li>
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/contact" class="waves-effect waves-light">
+      
+      <i class="fas fa-comments" style="zoom: 0.6;"></i>
+      
+      <span>留言板</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>友情链接</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
 </ul>
-<h4 id="完成说明："><a href="#完成说明：" class="headerlink" title="完成说明："></a>完成说明：</h4><h5 id="1）初始界面为登录功能，根据account表中的账号和密码进行登录。"><a href="#1）初始界面为登录功能，根据account表中的账号和密码进行登录。" class="headerlink" title="1）初始界面为登录功能，根据account表中的账号和密码进行登录。"></a>1）初始界面为登录功能，根据account表中的账号和密码进行登录。</h5><p><img src="/2020/05/14/%E5%9F%BA%E4%BA%8EJSP-JavaScript-servlet-jdbc%E6%8A%80%E6%9C%AF%E7%9A%84%E8%87%AA%E5%8A%A9%E5%AD%98%E5%8F%96%E6%AC%BE%E7%B3%BB%E7%BB%9F%E5%B0%8F%E6%A1%88%E4%BE%8B/login.png" alt></p>
-<h5 id="2）账号和密码前端验证功能"><a href="#2）账号和密码前端验证功能" class="headerlink" title="2）账号和密码前端验证功能"></a>2）账号和密码前端验证功能</h5><p><img src="/2020/05/14/%E5%9F%BA%E4%BA%8EJSP-JavaScript-servlet-jdbc%E6%8A%80%E6%9C%AF%E7%9A%84%E8%87%AA%E5%8A%A9%E5%AD%98%E5%8F%96%E6%AC%BE%E7%B3%BB%E7%BB%9F%E5%B0%8F%E6%A1%88%E4%BE%8B/1.png" alt></p>
-<p><img src="/2020/05/14/%E5%9F%BA%E4%BA%8EJSP-JavaScript-servlet-jdbc%E6%8A%80%E6%9C%AF%E7%9A%84%E8%87%AA%E5%8A%A9%E5%AD%98%E5%8F%96%E6%AC%BE%E7%B3%BB%E7%BB%9F%E5%B0%8F%E6%A1%88%E4%BE%8B/2.png" alt></p>
-<p><img src="/2020/05/14/%E5%9F%BA%E4%BA%8EJSP-JavaScript-servlet-jdbc%E6%8A%80%E6%9C%AF%E7%9A%84%E8%87%AA%E5%8A%A9%E5%AD%98%E5%8F%96%E6%AC%BE%E7%B3%BB%E7%BB%9F%E5%B0%8F%E6%A1%88%E4%BE%8B/3.png" alt></p>
-<h5 id="3）当用户名和密码正确后显示存款取款页面。当取款金额大于余额时显示交易失败。存款金额为每次十元到一万元范围。"><a href="#3）当用户名和密码正确后显示存款取款页面。当取款金额大于余额时显示交易失败。存款金额为每次十元到一万元范围。" class="headerlink" title="3）当用户名和密码正确后显示存款取款页面。当取款金额大于余额时显示交易失败。存款金额为每次十元到一万元范围。"></a>3）当用户名和密码正确后显示存款取款页面。当取款金额大于余额时显示交易失败。存款金额为每次十元到一万元范围。</h5><p><img src="/2020/05/14/%E5%9F%BA%E4%BA%8EJSP-JavaScript-servlet-jdbc%E6%8A%80%E6%9C%AF%E7%9A%84%E8%87%AA%E5%8A%A9%E5%AD%98%E5%8F%96%E6%AC%BE%E7%B3%BB%E7%BB%9F%E5%B0%8F%E6%A1%88%E4%BE%8B/mon.png" alt></p>
-<h5 id="4）-项目结构"><a href="#4）-项目结构" class="headerlink" title="4） 项目结构"></a>4） 项目结构</h5><p><img src="/2020/05/14/%E5%9F%BA%E4%BA%8EJSP-JavaScript-servlet-jdbc%E6%8A%80%E6%9C%AF%E7%9A%84%E8%87%AA%E5%8A%A9%E5%AD%98%E5%8F%96%E6%AC%BE%E7%B3%BB%E7%BB%9F%E5%B0%8F%E6%A1%88%E4%BE%8B/path.png" alt></p>
-<h3 id="代码："><a href="#代码：" class="headerlink" title="代码："></a>代码：</h3><p><strong>ebank.sql</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">DROP TABLE IF EXISTS &#96;account&#96;;</span><br><span class="line">CREATE TABLE &#96;account&#96; (</span><br><span class="line">  &#96;accountid&#96; char(16) NOT NULL,</span><br><span class="line">  &#96;password&#96; char(6) NOT NULL,</span><br><span class="line">  &#96;money&#96; double NOT NULL,</span><br><span class="line">  PRIMARY KEY (&#96;accountid&#96;)</span><br><span class="line">) ENGINE&#x3D;InnoDB DEFAULT CHARSET&#x3D;utf8;</span><br><span class="line"></span><br><span class="line">INSERT INTO &#96;account&#96; VALUES (&#39;1111111111111111&#39;, &#39;111111&#39;, &#39;9300&#39;);</span><br><span class="line">INSERT INTO &#96;account&#96; VALUES (&#39;1122334455667788&#39;, &#39;154720&#39;, &#39;4600&#39;);</span><br></pre></td></tr></table></figure>
 
-<p><strong>Account.java</strong></p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Account</span> </span>&#123;</span><br><span class="line">	<span class="keyword">private</span> String accountid;<span class="comment">//账号</span></span><br><span class="line">	<span class="keyword">private</span> String password;<span class="comment">//密码</span></span><br><span class="line">	<span class="keyword">private</span> <span class="keyword">double</span> money;<span class="comment">//余额</span></span><br><span class="line">	</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="title">Account</span><span class="params">(String accountid, String password, <span class="keyword">double</span> money)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">this</span>.accountid = accountid;</span><br><span class="line">		<span class="keyword">this</span>.password = password;</span><br><span class="line">		<span class="keyword">this</span>.money = money;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="title">Account</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> String <span class="title">getAccountid</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">return</span> accountid;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setAccountid</span><span class="params">(String accountid)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">this</span>.accountid = accountid;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> String <span class="title">getPassword</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">return</span> password;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setPassword</span><span class="params">(String password)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">this</span>.password = password;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">double</span> <span class="title">getMoney</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">return</span> money;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setMoney</span><span class="params">(<span class="keyword">double</span> money)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">this</span>.money = money;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p><strong>BaseDao.java: 进行数据库连接</strong></p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">BaseDao</span> </span>&#123;</span><br><span class="line">	<span class="keyword">private</span> <span class="keyword">final</span> <span class="keyword">static</span> String URL = <span class="string">"jdbc:mysql://localhost:3306/ebank?useUnicode=true&amp;characterEncoding=utf-8&amp;useSSL=false"</span>; <span class="comment">//3306是MySQL5.7默认端口</span></span><br><span class="line">	<span class="keyword">private</span> <span class="keyword">final</span> <span class="keyword">static</span> String DRIVER_CLASS = <span class="string">"com.mysql.jdbc.Driver"</span>;</span><br><span class="line">	<span class="keyword">private</span> <span class="keyword">final</span> <span class="keyword">static</span> String UNAME = <span class="string">"root"</span>;<span class="comment">//root用户</span></span><br><span class="line">	<span class="keyword">private</span> <span class="keyword">final</span> <span class="keyword">static</span> String UPASS = <span class="string">"154720"</span>;<span class="comment">//密码</span></span><br><span class="line">	<span class="keyword">protected</span> Connection con;</span><br><span class="line">	<span class="keyword">protected</span> PreparedStatement ps;</span><br><span class="line">	<span class="keyword">protected</span> ResultSet rs;</span><br><span class="line">	<span class="comment">// 1.取得数据连接 @return Connection</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> Connection <span class="title">getCon</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">try</span> &#123;</span><br><span class="line">			Class.forName(DRIVER_CLASS);</span><br><span class="line">			con = DriverManager.getConnection(URL, UNAME, UPASS);</span><br><span class="line">		&#125; <span class="keyword">catch</span> (ClassNotFoundException e) &#123;</span><br><span class="line">			e.printStackTrace();</span><br><span class="line">		&#125; <span class="keyword">catch</span> (SQLException e) &#123;</span><br><span class="line">			e.printStackTrace();</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">return</span> con;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="comment">// 2.关闭数据连接相关对象</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">closeAll</span><span class="params">(ResultSet rs, Statement st, Connection con)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">		<span class="keyword">try</span> &#123;</span><br><span class="line">			<span class="keyword">if</span> (rs != <span class="keyword">null</span>)</span><br><span class="line">				rs.close();</span><br><span class="line">			<span class="keyword">if</span> (st != <span class="keyword">null</span>)</span><br><span class="line">				st.close();</span><br><span class="line">			<span class="keyword">if</span> (con != <span class="keyword">null</span>)</span><br><span class="line">				con.close();</span><br><span class="line">		&#125; <span class="keyword">catch</span> (SQLException e) &#123;</span><br><span class="line">			e.printStackTrace();</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">executeSQL</span><span class="params">(String sql, Object[] param)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">int</span> rows = <span class="number">0</span>;</span><br><span class="line">		<span class="keyword">try</span> &#123;</span><br><span class="line">			con = getCon();</span><br><span class="line">			ps = con.prepareStatement(sql);</span><br><span class="line">			<span class="keyword">if</span> (param != <span class="keyword">null</span>) &#123;</span><br><span class="line">				<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; param.length; i++) &#123;</span><br><span class="line">					<span class="comment">// 数据库兼容其它类型转为为string型</span></span><br><span class="line">					ps.setString(i + <span class="number">1</span>, param[i].toString());</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">			rows = ps.executeUpdate();</span><br><span class="line">		&#125; <span class="keyword">catch</span> (SQLException e) &#123;</span><br><span class="line">			e.printStackTrace();</span><br><span class="line">		&#125; <span class="keyword">finally</span> &#123;</span><br><span class="line">			closeAll(<span class="keyword">null</span>, ps, con);</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">return</span> rows;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<div id="mobile-nav" class="side-nav sidenav">
 
-<p><strong>AcountDAO.java：数据库操作类，完成登录，存款，取款功能</strong></p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">AcountDao</span> <span class="keyword">extends</span> <span class="title">BaseDao</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="comment">// 判断账号密码是否正确</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> Account <span class="title">getLongin</span><span class="params">(String accountid, String password)</span> </span>&#123;</span><br><span class="line">		Account account = <span class="keyword">null</span>;</span><br><span class="line">		String sql = <span class="string">"select * from account where accountid=? and password=?"</span>;</span><br><span class="line">		Connection con = getCon();</span><br><span class="line">		PreparedStatement pstmt = <span class="keyword">null</span>;</span><br><span class="line">		ResultSet rs = <span class="keyword">null</span>;</span><br><span class="line">		<span class="keyword">try</span> &#123;</span><br><span class="line">			pstmt = con.prepareStatement(sql);</span><br><span class="line">			pstmt.setString(<span class="number">1</span>, accountid);</span><br><span class="line">			pstmt.setString(<span class="number">2</span>, password);</span><br><span class="line">			rs = pstmt.executeQuery();</span><br><span class="line">			<span class="keyword">if</span> (rs.next()) &#123;</span><br><span class="line">				<span class="keyword">double</span> money = rs.getDouble(<span class="string">"money"</span>);</span><br><span class="line">				account = <span class="keyword">new</span> Account(accountid, password, money);</span><br><span class="line">			&#125;</span><br><span class="line"></span><br><span class="line">		&#125; <span class="keyword">catch</span> (SQLException e) &#123;</span><br><span class="line">			e.printStackTrace();</span><br><span class="line">		&#125; <span class="keyword">finally</span> &#123;</span><br><span class="line">			closeAll(rs, pstmt, con);</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">return</span> account;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="comment">// 根据账号得到该账号的所有信息</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> Account <span class="title">getAccountById</span><span class="params">(String accountid)</span> </span>&#123;</span><br><span class="line">		Account account = <span class="keyword">null</span>;</span><br><span class="line">		String sql = <span class="string">"select * from account where accountid=?"</span>;</span><br><span class="line">		Connection con = getCon();</span><br><span class="line">		PreparedStatement pstmt = <span class="keyword">null</span>;</span><br><span class="line">		ResultSet rs = <span class="keyword">null</span>;</span><br><span class="line">		<span class="keyword">try</span> &#123;</span><br><span class="line">			pstmt = con.prepareStatement(sql);</span><br><span class="line">			pstmt.setString(<span class="number">1</span>, accountid);</span><br><span class="line">			rs = pstmt.executeQuery();</span><br><span class="line">			<span class="keyword">if</span> (rs.next()) &#123;</span><br><span class="line">				String password = rs.getString(<span class="string">"password"</span>);</span><br><span class="line">				<span class="keyword">double</span> money = rs.getDouble(<span class="string">"money"</span>);</span><br><span class="line">				account = <span class="keyword">new</span> Account(accountid, password, money);</span><br><span class="line">			&#125;</span><br><span class="line">		&#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">			e.printStackTrace();</span><br><span class="line">		&#125; <span class="keyword">finally</span> &#123;</span><br><span class="line">			closeAll(rs, pstmt, con);</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">return</span> account;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="comment">// 实现取款、存款功能的方法</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">updateMoneyById</span><span class="params">(String accountid, <span class="keyword">double</span> money)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">boolean</span> flag = <span class="keyword">false</span>;</span><br><span class="line">		String sql = <span class="string">"update account set money=? where accountid=?"</span>;</span><br><span class="line">		con = <span class="keyword">super</span>.getCon();</span><br><span class="line">		<span class="keyword">try</span> &#123;</span><br><span class="line">			ps = con.prepareStatement(sql);</span><br><span class="line">			ps.setDouble(<span class="number">1</span>, money);</span><br><span class="line">			ps.setString(<span class="number">2</span>, accountid);</span><br><span class="line">			<span class="keyword">int</span> a = ps.executeUpdate();<span class="comment">// 得到更新行数</span></span><br><span class="line">			<span class="comment">// 当没有更新的时候返回0</span></span><br><span class="line">			<span class="keyword">if</span> (a != <span class="number">0</span>) &#123;</span><br><span class="line">				flag = <span class="keyword">true</span>;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125; <span class="keyword">catch</span> (SQLException e) &#123;</span><br><span class="line">			e.printStackTrace();</span><br><span class="line">		&#125; <span class="keyword">finally</span> &#123;</span><br><span class="line">			<span class="keyword">super</span>.closeAll(rs, ps, con);</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">return</span> flag;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p><strong>login.jsp: 内容包括：javascript判断用户名和密码是否为空以及输入的用户名和密码长度是否符合要求</strong> </p>
-<figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br></pre></td><td class="code"><pre><span class="line">&lt;%@ page language=<span class="string">"java"</span> contentType=<span class="string">"text/html; charset=UTF-8"</span></span><br><span class="line">	pageEncoding=<span class="string">"UTF-8"</span>%&gt;</span><br><span class="line">&lt;!DOCTYPE html PUBLIC <span class="string">"-//W3C//DTD HTML 4.01 Transitional//EN"</span> <span class="string">"http://www.w3.org/TR/html4/loose.dtd"</span>&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">&lt;meta http-equiv=<span class="string">"Content-Type"</span> content=<span class="string">"text/html; charset=UTF-8"</span>&gt;</span><br><span class="line">&lt;title&gt;自助存取款系统&lt;/title&gt;</span><br><span class="line">&lt;style type=<span class="string">"text/css"</span>&gt;</span><br><span class="line">table &#123;</span><br><span class="line">	width: <span class="number">350</span>px;</span><br><span class="line">	height: <span class="number">150</span>px;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">tr, td, th, input &#123;</span><br><span class="line">	font-weight: bold;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.input &#123;</span><br><span class="line">	width: <span class="number">200</span>px;</span><br><span class="line">	height: <span class="number">25</span>px</span><br><span class="line">&#125;</span><br><span class="line">&lt;/style&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">	<span class="function">function <span class="title">Login</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">var</span> accountid = document.getElementById(<span class="string">"accountid"</span>).value;</span><br><span class="line">		<span class="keyword">var</span> password = document.getElementById(<span class="string">"password"</span>).value;</span><br><span class="line">		<span class="keyword">if</span> (accountid.trim() == <span class="string">""</span> &amp;&amp; password.trim() == <span class="string">""</span>) &#123;</span><br><span class="line">			alert(<span class="string">"用户名和密码不能为空"</span>);</span><br><span class="line">			<span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">		&#125; <span class="keyword">else</span> <span class="keyword">if</span> (accountid.trim() == <span class="string">""</span> &amp;&amp; password.trim() != <span class="string">""</span>) &#123;</span><br><span class="line">			alert(<span class="string">"用户名不能为空"</span>);</span><br><span class="line">			<span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">		&#125; <span class="keyword">else</span> <span class="keyword">if</span> (password.trim() == <span class="string">""</span> &amp;&amp; accountid.trim() != <span class="string">""</span>) &#123;</span><br><span class="line">			alert(<span class="string">"密码不能为空"</span>);</span><br><span class="line">			<span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">		&#125; <span class="keyword">else</span> <span class="keyword">if</span> (accountid.length &lt; <span class="number">16</span>) &#123;</span><br><span class="line">			alert(<span class="string">"请输入16位数账号"</span>);</span><br><span class="line">			<span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">		&#125; <span class="keyword">else</span> <span class="keyword">if</span> (password.length &lt; <span class="number">6</span>) &#123;</span><br><span class="line">			alert(<span class="string">"请输入6位数密码"</span>);</span><br><span class="line">			<span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">	&#125;</span><br><span class="line">&lt;/script&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">	&lt;h2 align=<span class="string">"center"</span>&gt;</span><br><span class="line">		&lt;font color=red&gt;自助存取款系统&lt;/font&gt;</span><br><span class="line">	&lt;/h2&gt;</span><br><span class="line">	&lt;form action=<span class="string">"LoginServlet"</span> method=<span class="string">"post"</span> name=<span class="string">"loginform"</span>&gt;</span><br><span class="line">		&lt;table align=<span class="string">"center"</span> border=<span class="string">"3"</span>&gt;</span><br><span class="line">			&lt;tr&gt;</span><br><span class="line">				&lt;th align="left" bgcolor="cornflowerblue" colspan="3"&gt;账号:&lt;/th&gt;</span><br><span class="line">			&lt;/tr&gt;</span><br><span class="line"></span><br><span class="line">			&lt;tr&gt;</span><br><span class="line">				&lt;!-- onkeyup=<span class="string">"this.value=this.value.replace(/[^0-9.]/g,'')正则表达式限制输入的只能是数字且不能为空 --&gt;</span></span><br><span class="line"><span class="string">				&lt;td&gt;&lt;input class="</span>input<span class="string">" type="</span>text<span class="string">" name="</span>accountid<span class="string">"</span></span><br><span class="line"><span class="string">					id="</span>accountid<span class="string">" maxlength="</span><span class="number">16</span><span class="string">" placeholder="</span>请输入<span class="number">16</span>位数账号密码<span class="string">"</span></span><br><span class="line"><span class="string">					onkeyup="</span><span class="keyword">this</span>.value=<span class="keyword">this</span>.value.replace(/[^<span class="number">0</span>-<span class="number">9</span>.]/g,<span class="string">''</span>)<span class="string">"&gt;&lt;/td&gt;</span></span><br><span class="line"><span class="string">				&lt;td width="</span><span class="number">100</span>px<span class="string">" height="</span><span class="number">50</span>px<span class="string">"&gt;&lt;/td&gt;</span></span><br><span class="line"><span class="string">			&lt;/tr&gt;</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">			&lt;tr&gt;</span></span><br><span class="line"><span class="string">				&lt;th align="</span>left<span class="string">" bgcolor="</span>cornflowerblue<span class="string">" colspan="</span><span class="number">2</span><span class="string">"&gt;密码:&lt;/th&gt;</span></span><br><span class="line"><span class="string">			&lt;/tr&gt;</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">			&lt;tr&gt;</span></span><br><span class="line"><span class="string">				&lt;td&gt;&lt;input class="</span>input<span class="string">" type="</span>password<span class="string">" name="</span>password<span class="string">"</span></span><br><span class="line"><span class="string">					id="</span>password<span class="string">" maxlength="</span><span class="number">6</span><span class="string">" placeholder="</span>请输入<span class="number">6</span>位数密码<span class="string">"</span></span><br><span class="line"><span class="string">					onkeyup="</span><span class="keyword">this</span>.value=<span class="keyword">this</span>.value.replace(/[^<span class="number">0</span>-<span class="number">9</span>.]/g,<span class="string">''</span>)<span class="string">"&gt;&lt;/td&gt;</span></span><br><span class="line"><span class="string">				&lt;td width="</span><span class="number">100</span>px<span class="string">" height="</span><span class="number">50</span>px<span class="string">"&gt;&lt;/td&gt;</span></span><br><span class="line"><span class="string">			&lt;/tr&gt;</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">			&lt;tr&gt;</span></span><br><span class="line"><span class="string">				&lt;td align="</span>center<span class="string">" colspan="</span><span class="number">2</span><span class="string">"&gt;</span></span><br><span class="line"><span class="string">					&lt;/center&gt; &lt;input style="</span>background: cornflowerblue;<span class="string">" type="</span>submit<span class="string">"</span></span><br><span class="line"><span class="string">					value="</span>登录<span class="string">" name="</span>login<span class="string">" onclick="</span><span class="keyword">return</span> Login()<span class="string">"&gt;</span></span><br><span class="line"><span class="string">				&lt;/td&gt;</span></span><br><span class="line"><span class="string">			&lt;/tr&gt;</span></span><br><span class="line"><span class="string">		&lt;/table&gt;</span></span><br><span class="line"><span class="string">	&lt;/form&gt;</span></span><br><span class="line"><span class="string">&lt;/body&gt;</span></span><br><span class="line"><span class="string">&lt;/html&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p><strong>LoginServlet.java</strong>：<strong>验证login.jsp页面输入用户名和密码是否存在于数据库，存在就跳转deal.jsp，否则登录失败提示“登陆失败，请重新登陆”并返回登录界面*</strong></p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@WebServlet</span>(<span class="string">"/LoginServlet"</span>)</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">LoginServlet</span> <span class="keyword">extends</span> <span class="title">HttpServlet</span> </span>&#123;</span><br><span class="line">	<span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">long</span> serialVersionUID = <span class="number">1L</span>;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="title">LoginServlet</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">super</span>();</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">doGet</span><span class="params">(HttpServletRequest request, HttpServletResponse response)</span></span></span><br><span class="line"><span class="function">			<span class="keyword">throws</span> ServletException, IOException </span>&#123;</span><br><span class="line">		response.getWriter().append(<span class="string">"Served at: "</span>).append(request.getContextPath());</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">doPost</span><span class="params">(HttpServletRequest request, HttpServletResponse response)</span></span></span><br><span class="line"><span class="function">			<span class="keyword">throws</span> ServletException, IOException </span>&#123;</span><br><span class="line"></span><br><span class="line">		response.setContentType(<span class="string">"text/html"</span>);</span><br><span class="line">		request.setCharacterEncoding(<span class="string">"utf-8"</span>);</span><br><span class="line">		response.setCharacterEncoding(<span class="string">"utf-8"</span>);</span><br><span class="line">		PrintWriter out = response.getWriter();</span><br><span class="line">		String accountid = request.getParameter(<span class="string">"accountid"</span>);<span class="comment">// 获取账号</span></span><br><span class="line">		String password = request.getParameter(<span class="string">"password"</span>);<span class="comment">// 获取密码</span></span><br><span class="line">		Account account = <span class="keyword">new</span> Account();</span><br><span class="line">		AcountDao acountdao = <span class="keyword">new</span> AcountDao();</span><br><span class="line">		<span class="keyword">if</span> (accountid != <span class="keyword">null</span> &amp;&amp; password != <span class="keyword">null</span>) &#123;</span><br><span class="line">			<span class="keyword">if</span> (acountdao.getLongin(accountid, password) != <span class="keyword">null</span>) &#123;</span><br><span class="line">				request.getRequestDispatcher(<span class="string">"deal.jsp"</span>).forward(request, response);</span><br><span class="line">			&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">				out.print(</span><br><span class="line">						<span class="string">"&lt;script type=\"text/javascript\"&gt;alert(\"登陆失败，请重新登陆\");window.location.replace(\"http://localhost:8080/eBank/login.jsp\");&lt;/script&gt;"</span>);</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p><strong>deal.jsp：</strong> <strong>存取款界面，具有显示账号和余额、选择存取款操作功能，javascript代码判断用户是选择取款还是存款以及输入金额是否符合要求</strong></p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br></pre></td><td class="code"><pre><span class="line">&lt;%<span class="meta">@page</span> <span class="keyword">import</span>=<span class="string">"com.gupt.account.AcountDao"</span>%&gt;</span><br><span class="line">&lt;%<span class="meta">@page</span> <span class="keyword">import</span>=<span class="string">"com.gupt.account.Account"</span>%&gt;</span><br><span class="line">&lt;%@ page language=<span class="string">"java"</span> contentType=<span class="string">"text/html; charset=utf-8"</span></span><br><span class="line">	pageEncoding=<span class="string">"utf-8"</span>%&gt;</span><br><span class="line">&lt;%<span class="meta">@page</span> <span class="keyword">import</span>=<span class="string">"com.gupt.account.*"</span>%&gt;</span><br><span class="line">&lt;!DOCTYPE html PUBLIC <span class="string">"-//W3C//DTD HTML 4.01 Transitional//EN"</span> <span class="string">"http://www.w3.org/TR/html4/loose.dtd"</span>&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">&lt;meta http-equiv=<span class="string">"Content-Type"</span> content=<span class="string">"text/html; charset=utf-8"</span>&gt;</span><br><span class="line">&lt;title&gt;欢迎进入银行存储系统&lt;/title&gt;</span><br><span class="line">&lt;style type=<span class="string">"text/css"</span>&gt;</span><br><span class="line">table &#123;</span><br><span class="line">	width: <span class="number">500</span>px;</span><br><span class="line">	height: <span class="number">250</span>px;</span><br><span class="line">	table-layout: fixed;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">tr, td, input &#123;</span><br><span class="line">	font-weight: bold;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/style&gt;</span><br><span class="line">&lt;script type=<span class="string">"text/javascript"</span>&gt;</span><br><span class="line">	<span class="function">function <span class="title">getMoney</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">var</span> updateMoney = document.getElementById(<span class="string">"updateMoney"</span>).value;<span class="comment">//得到取款或者存款的金额</span></span><br><span class="line">		<span class="keyword">var</span> money = document.getElementById(<span class="string">"money"</span>).value;<span class="comment">//得到余额</span></span><br><span class="line">		<span class="keyword">var</span> radioList = document.getElementsByName(<span class="string">"radio"</span>);<span class="comment">//返回名称为radio的对象的集合。</span></span><br><span class="line">		<span class="keyword">var</span> radiovalue = <span class="string">""</span>;</span><br><span class="line">		<span class="comment">//遍历radioList</span></span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; radioList.length; i++) &#123;</span><br><span class="line">			<span class="keyword">if</span> (radioList[i].checked) &#123;</span><br><span class="line">				radiovalue = radioList[i].value;<span class="comment">//赋值</span></span><br><span class="line">				<span class="keyword">break</span>;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">if</span> (radiovalue == <span class="string">""</span>) &#123;</span><br><span class="line">			alert(<span class="string">"请选择取款或者存款后再提交"</span>);</span><br><span class="line">			<span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">if</span> (updateMoney.trim() == <span class="string">""</span>) &#123;</span><br><span class="line">			alert(<span class="string">"金额不能为空"</span>);</span><br><span class="line">			<span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">if</span> (radiovalue == <span class="string">"取款"</span> &amp;&amp; updateMoney.value &gt; money) &#123;</span><br><span class="line">			alert(<span class="string">"交易失败!!!"</span> + <span class="string">"\n"</span> + <span class="string">"取款金额不能超过余额"</span> + <span class="string">"金额:"</span> + updateMoney + <span class="string">"余额:"</span></span><br><span class="line">					+ money);</span><br><span class="line">			<span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">if</span> (radiovalue == <span class="string">"存款"</span> &amp;&amp; (updateMoney&lt;<span class="number">10</span> || updateMoney&gt;<span class="number">10000</span>)) &#123;</span><br><span class="line"></span><br><span class="line">			alert(<span class="string">"存款金额为每次十元到一万元"</span>);</span><br><span class="line">			<span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line">&lt;/script&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">	&lt;div align=<span class="string">"center"</span>&gt;</span><br><span class="line">		&lt;h1&gt;自助存储系统&lt;/h1&gt;</span><br><span class="line">		&lt;form action=<span class="string">"UpdateMoneyServlet"</span> method=<span class="string">"post"</span>&gt;</span><br><span class="line">			&lt;table border=<span class="string">"3px"</span>; &gt;</span><br><span class="line">				&lt;tr&gt;</span><br><span class="line">					&lt;%</span><br><span class="line">						String id = request.getParameter(<span class="string">"accountid"</span>);</span><br><span class="line">						AcountDao acountDao = <span class="keyword">new</span> AcountDao();</span><br><span class="line">						Account account = acountDao.getAccountById(id);</span><br><span class="line">						String accountid = account.getAccountid();</span><br><span class="line">						<span class="keyword">double</span> money = account.getMoney();</span><br><span class="line">					%&gt;</span><br><span class="line"></span><br><span class="line">					&lt;td colspan="3" bgcolor="cornflowerblue"&gt;当前账号：&lt;%=accountid%&gt;&lt;/td&gt;</span><br><span class="line">					&lt;input type=<span class="string">"hidden"</span> name=<span class="string">"accountid"</span> value=<span class="string">"&lt;%=accountid%&gt;"</span>&gt;</span><br><span class="line">					&lt;td colspan="3" bgcolor="cornflowerblue"&gt;余额：&lt;%=money%&gt;&lt;/td&gt;</span><br><span class="line">					&lt;input type=<span class="string">"hidden"</span> id=<span class="string">"money"</span> name=<span class="string">"money"</span> value=<span class="string">"&lt;%=money%&gt;"</span>&gt;</span><br><span class="line">				&lt;/tr&gt;</span><br><span class="line"></span><br><span class="line">				&lt;tr&gt;</span><br><span class="line">					&lt;td colspan="6"&gt;选择交易类型:&lt;/td&gt;</span><br><span class="line">				&lt;/tr&gt;</span><br><span class="line">				&lt;tr&gt;</span><br><span class="line">					&lt;td colspan=<span class="string">"3"</span>&gt;&lt;input type=<span class="string">"radio"</span> id=<span class="string">"radio"</span> name=<span class="string">"radio"</span></span><br><span class="line">						value="取款" /&gt;取款&lt;/td&gt;</span><br><span class="line">					&lt;td colspan=<span class="string">"3"</span>&gt;&lt;input type=<span class="string">"radio"</span> id=<span class="string">"radio"</span> name=<span class="string">"radio"</span></span><br><span class="line">						value="存款" /&gt;存款&lt;/td&gt;</span><br><span class="line">				&lt;/tr&gt;</span><br><span class="line">				&lt;tr&gt;</span><br><span class="line">					&lt;td colspan="6"&gt;金额:&lt;/td&gt;</span><br><span class="line">				&lt;/tr&gt;</span><br><span class="line">				&lt;tr&gt;</span><br><span class="line">					&lt;td colspan=<span class="string">"3"</span>&gt;&lt;input id=<span class="string">"updateMoney"</span> name=<span class="string">"updateMoney"</span></span><br><span class="line">						size="32" placeholder="请输入金额" type="number" /&gt;&lt;/td&gt;</span><br><span class="line"></span><br><span class="line">					&lt;td colspan="3"&gt;元&lt;/td&gt;</span><br><span class="line">				&lt;/tr&gt;</span><br><span class="line">				&lt;tr&gt;</span><br><span class="line">					&lt;td colspan=<span class="string">"6"</span> align=<span class="string">"center"</span>&gt;&lt;input type=<span class="string">"submit"</span> value=<span class="string">"提交"</span></span><br><span class="line">						onclick="return getMoney()" /&gt;&lt;/td&gt;</span><br><span class="line">				&lt;/tr&gt;</span><br><span class="line">			&lt;/table&gt;</span><br><span class="line">		&lt;/form&gt;</span><br><span class="line">	&lt;/div&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
-
-<p><strong>UpdateMoneyServlet.java：</strong> <strong>*进行取款和存款的业务操作并且跳转到result.jsp界面</strong></p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@WebServlet</span>(<span class="string">"/UpdateMoneyServlet"</span>)</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">UpdateMoneyServlet</span> <span class="keyword">extends</span> <span class="title">HttpServlet</span> </span>&#123;</span><br><span class="line">	<span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">long</span> serialVersionUID = <span class="number">1L</span>;</span><br><span class="line">       </span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="title">UpdateMoneyServlet</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">super</span>();</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">doGet</span><span class="params">(HttpServletRequest request, HttpServletResponse response)</span> <span class="keyword">throws</span> ServletException, IOException </span>&#123;</span><br><span class="line">		response.getWriter().append(<span class="string">"Served at: "</span>).append(request.getContextPath());</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">doPost</span><span class="params">(HttpServletRequest request, HttpServletResponse response)</span> <span class="keyword">throws</span> ServletException, IOException </span>&#123;</span><br><span class="line">		response.setContentType(<span class="string">"tex/html"</span>);</span><br><span class="line">		response.setCharacterEncoding(<span class="string">"utf-8"</span>);</span><br><span class="line">		request.setCharacterEncoding(<span class="string">"utf-8"</span>);</span><br><span class="line">		PrintWriter out = response.getWriter();</span><br><span class="line">		<span class="comment">//得到radio单选框的属性value值（取款或存款）</span></span><br><span class="line">		String radiovalue=request.getParameter(<span class="string">"radio"</span>);</span><br><span class="line">		String accountid=request.getParameter(<span class="string">"accountid"</span>);<span class="comment">//获取账号</span></span><br><span class="line">		</span><br><span class="line">		<span class="comment">//获取账户中的余额，并转为double类型</span></span><br><span class="line">		String moneynum=request.getParameter(<span class="string">"money"</span>);</span><br><span class="line">		<span class="keyword">double</span> money= Double.valueOf(moneynum.toString());</span><br><span class="line">		</span><br><span class="line">	    <span class="comment">//获取deal.jsp界面name值为updateMoney的input中输入的存款或者取款的金额</span></span><br><span class="line">		String  money2=request.getParameter(<span class="string">"updateMoney"</span>);</span><br><span class="line">		<span class="comment">//把获取的存款或者取款的金额转为double型</span></span><br><span class="line">		<span class="keyword">double</span> updateMoney= Double.valueOf(money2.toString());</span><br><span class="line">	    AcountDao acountDao=<span class="keyword">new</span> AcountDao();</span><br><span class="line">	    <span class="keyword">double</span> moneySum;</span><br><span class="line">	 </span><br><span class="line">	    <span class="comment">//判断radiovalue的值是取款还是存款，并执行相应运算</span></span><br><span class="line">	    <span class="keyword">switch</span>(radiovalue)&#123;</span><br><span class="line">    	<span class="keyword">case</span> <span class="string">"取款"</span> :</span><br><span class="line">    	<span class="keyword">if</span> (updateMoney&lt;=money) &#123;<span class="comment">//当取款金额小于等于余额时进行取款</span></span><br><span class="line">    			moneySum =  money-updateMoney ;<span class="comment">//取款运算</span></span><br><span class="line">    			<span class="comment">//调用updateMoneyById方法更新余额，并判断boolean值,true就跳到交易成功界面</span></span><br><span class="line">    			<span class="keyword">boolean</span> a = acountDao.updateMoneyById(accountid, moneySum);</span><br><span class="line">    			<span class="keyword">if</span> (a == <span class="keyword">true</span>) &#123;</span><br><span class="line">    				response.sendRedirect(<span class="string">"result.jsp"</span>);</span><br><span class="line">    			&#125;</span><br><span class="line">			&#125; </span><br><span class="line">    	<span class="keyword">break</span>;</span><br><span class="line">    	<span class="keyword">case</span> <span class="string">"存款"</span> :</span><br><span class="line">			<span class="keyword">if</span> (updateMoney&gt;=<span class="number">10</span>&amp;&amp;updateMoney&lt;=<span class="number">10000</span>) &#123;<span class="comment">//存款金额为每次十元到一万元范围</span></span><br><span class="line">				moneySum=money+updateMoney;<span class="comment">//存款运算</span></span><br><span class="line">				<span class="keyword">boolean</span> b = acountDao.updateMoneyById(accountid, moneySum);</span><br><span class="line">				<span class="keyword">if</span> (b == <span class="keyword">true</span>) &#123;</span><br><span class="line">					response.sendRedirect(<span class="string">"result.jsp"</span>);</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">break</span>;</span><br><span class="line">	    &#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p><strong>result.jsp：</strong> <strong>交易成功界面</strong></p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">&lt;%@ page language=<span class="string">"java"</span> contentType=<span class="string">"text/html; charset=UTF-8"</span></span><br><span class="line">	pageEncoding=<span class="string">"UTF-8"</span>%&gt;</span><br><span class="line">&lt;%<span class="meta">@page</span> <span class="keyword">import</span>=<span class="string">"javax.swing.JOptionPane"</span>%&gt;</span><br><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">&lt;meta charset=<span class="string">"UTF-8"</span>&gt;</span><br><span class="line">&lt;title&gt;交易成功&lt;/title&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">	&lt;h1&gt;交易成功！&lt;/h1&gt;</span><br><span class="line"></span><br><span class="line">	&lt;script type=<span class="string">"text/javascript"</span>&gt;</span><br><span class="line">		<span class="function">function <span class="title">logout</span><span class="params">()</span> </span>&#123;</span><br><span class="line">			<span class="keyword">if</span> (confirm(<span class="string">" 您查看的网页正在试图关闭窗口。"</span> + <span class="string">" \n "</span> + <span class="string">"是否关闭此窗口？"</span>)) &#123;</span><br><span class="line">                  <span class="comment">//跳转到存取款界面</span></span><br><span class="line">				window.location.href = <span class="string">"javascript:history.back();"</span>;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&lt;/script&gt;</span><br><span class="line">	&lt;a onclick="logout()"&gt;关闭窗口&lt;/a&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
-
-<p><a href="https://pan.baidu.com/s/1RyydNwQhfK3ntEFEmRYEBw" target="_blank" rel="noopener">项目源代码下载</a></p>
-<p><strong>提取码：y8hr</strong> </p>
-
-      
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">Hexo</div>
+        <div class="logo-desc">
+            
+            Never really desperate, only the lost of the soul.
+            
+        </div>
     </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/05/14/%E5%9F%BA%E4%BA%8EJSP-JavaScript-servlet-jdbc%E6%8A%80%E6%9C%AF%E7%9A%84%E8%87%AA%E5%8A%A9%E5%AD%98%E5%8F%96%E6%AC%BE%E7%B3%BB%E7%BB%9F%E5%B0%8F%E6%A1%88%E4%BE%8B/" data-id="ckbkr2wdu0002c0tah6ki63ap" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaEE/" rel="tag">JavaEE</a></li></ul>
 
-    </footer>
-  </div>
-  
-</article>
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/contact" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-comments"></i>
+			
+			留言板
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			友情链接
+		</a>
+          
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/blinkfox/hexo-theme-matery" class="waves-effect waves-light" target="_blank">
+                <i class="fab fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul>
+</div>
 
 
-  
-    <article id="post-Java爱心代码" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2020/05/11/Java%E7%88%B1%E5%BF%83%E4%BB%A3%E7%A0%81/" class="article-date">
-  <time datetime="2020-05-11T14:52:14.000Z" itemprop="datePublished">2020-05-11</time>
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/blinkfox/hexo-theme-matery" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
 </a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
         
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/05/11/Java%E7%88%B1%E5%BF%83%E4%BB%A3%E7%A0%81/">Java爱心代码</a>
-    </h1>
-  
+    </nav>
 
-      </header>
+</header>
+
     
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="程序员的浪漫之使用Java-GUI编程实现笛卡尔心形曲线"><a href="#程序员的浪漫之使用Java-GUI编程实现笛卡尔心形曲线" class="headerlink" title="程序员的浪漫之使用Java GUI编程实现笛卡尔心形曲线"></a>程序员的浪漫之使用Java GUI编程实现<strong>笛卡尔心形曲线</strong></h3><p><strong>代码如下：</strong></p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.awt.Color;</span><br><span class="line"><span class="keyword">import</span> java.awt.Graphics;</span><br><span class="line"><span class="keyword">import</span> java.awt.Image;</span><br><span class="line"><span class="keyword">import</span> java.awt.Toolkit;</span><br><span class="line"><span class="keyword">import</span> javax.swing.JFrame;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Heart</span> <span class="keyword">extends</span> <span class="title">JFrame</span> </span>&#123;</span><br><span class="line">	<span class="keyword">int</span> WIDTH = <span class="number">500</span>;</span><br><span class="line">	<span class="keyword">int</span> HEIGHT = <span class="number">600</span>;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">int</span> WINDOW_WIDTH = Toolkit.getDefaultToolkit().getScreenSize().width;</span><br><span class="line">	<span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">int</span> WINDOW_HEIGHT = Toolkit.getDefaultToolkit().getScreenSize().height;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="title">Heart</span><span class="params">()</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">		<span class="keyword">super</span>(<span class="string">"爱心"</span>);</span><br><span class="line"></span><br><span class="line">		<span class="keyword">this</span>.setBackground(Color.black);</span><br><span class="line"></span><br><span class="line">		<span class="keyword">this</span>.setLocation((WINDOW_WIDTH - WIDTH) / <span class="number">2</span>, (WINDOW_HEIGHT - HEIGHT) / <span class="number">2</span>);</span><br><span class="line"></span><br><span class="line">		<span class="keyword">this</span>.setSize(WIDTH, HEIGHT);</span><br><span class="line"></span><br><span class="line">		<span class="keyword">this</span>.setLayout(getLayout());</span><br><span class="line"></span><br><span class="line">		<span class="keyword">this</span>.setVisible(<span class="keyword">true</span>);</span><br><span class="line"></span><br><span class="line">		<span class="keyword">this</span>.setDefaultCloseOperation(DISPOSE_ON_CLOSE);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">paint</span><span class="params">(Graphics g)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">double</span> x, y, r;</span><br><span class="line">		Image image = <span class="keyword">this</span>.createImage(WIDTH, HEIGHT);</span><br><span class="line">		Graphics pic = image.getGraphics();</span><br><span class="line"></span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">92</span>; i++) &#123;</span><br><span class="line">			<span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; <span class="number">100</span>; j++) &#123;</span><br><span class="line">				r = Math.PI / <span class="number">45</span> + Math.PI / <span class="number">45</span> * i * (<span class="number">1</span> - Math.sin(Math.PI / <span class="number">45</span> * j)) * <span class="number">18</span>;</span><br><span class="line">				x = r * Math.cos(Math.PI / <span class="number">45</span> * j) * Math.sin(Math.PI / <span class="number">45</span> * i) + WIDTH / <span class="number">2</span>;</span><br><span class="line">				y = -r * Math.sin(Math.PI / <span class="number">45</span> * j) + HEIGHT / <span class="number">2</span>;</span><br><span class="line">				pic.setColor(Color.MAGENTA);</span><br><span class="line"></span><br><span class="line">				pic.fillOval((<span class="keyword">int</span>) x, (<span class="keyword">int</span>) y, <span class="number">2</span>, <span class="number">2</span>);</span><br><span class="line">			&#125;</span><br><span class="line"></span><br><span class="line">			g.drawImage(image, <span class="number">0</span>, <span class="number">0</span>, <span class="keyword">this</span>);</span><br><span class="line"></span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">new</span> Heart();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<style>
+    .carousel-control {
+        width: 45px;
+        height: 45px;
+        line-height: 55px;
+        border-radius: 45px;
+        background: transparent;
+        cursor: pointer;
+        z-index: 100;
+    }
 
-<p><strong>效果如下：</strong></p>
-<p><img src="/2020/05/11/Java%E7%88%B1%E5%BF%83%E4%BB%A3%E7%A0%81/%E7%88%B1%E5%BF%83.png" alt></p>
+    #prev-cover {
+        position: absolute;
+        top: 48%;
+        left: 8px;
+    }
 
-      
+    #next-cover {
+        position: absolute;
+        top: 48%;
+        right: 8px;;
+    }
+
+    #prev-cover i {
+        margin-right: 3px;
+    }
+
+    #next-cover i {
+        margin-left: 3px;
+    }
+
+    .carousel-control:hover {
+        background-color: rgba(0, 0, 0, .4);
+    }
+
+    .carousel-control i {
+        color: #fff;
+        font-size: 2.4rem;
+    }
+</style>
+
+
+
+<div class="carousel carousel-slider center index-cover" data-indicators="true" style="margin-top: -64px;">
+    
+
+    <div class="carousel-item red white-text bg-cover about-cover">
+        <div class="container">
+            <div class="row">
+    <div class="col s10 offset-s1 m8 offset-m2 l8 offset-l2">
+        <div class="brand">
+            <div class="title center-align">
+                
+                    subtitle
+                
+            </div>
+
+            <div class="description center-align">
+                
+                <span id="subtitle"></span>
+                <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11"></script>
+                <script>
+                    var typed = new Typed("#subtitle", {
+                        strings: ['从来没有真正的绝境, 只有心灵的迷途','Never really desperate, only the lost of the soul'],
+                        startDelay: 300,
+                        typeSpeed: 100,
+                        loop: true,
+                        backSpeed: 50,
+                        showCursor: true
+                    });
+                </script>
+                
+            </div>
+        </div>
     </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/05/11/Java%E7%88%B1%E5%BF%83%E4%BB%A3%E7%A0%81/" data-id="cka2mff250000tktaaihhf8b0" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java-GUI/" rel="tag">Java GUI</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
+</div>
 
 
-  
+<script>
+    // 每天切换 banner 图.  Switch banner image every day.
+    var bannerUrl = "/medias/banner/" + new Date().getDay() + '.jpg';
+    $('.bg-cover').css('background-image', 'url(' + bannerUrl + ')');
+</script>
 
 
-</section>
+
+            <div class="cover-btns">
+                <a href="#indexCard" class="waves-effect waves-light btn">
+                    <i class="fa fa-angle-double-down"></i>开始阅读
+                </a>
+
+                
+                    <a href="https://github.com/blinkfox/hexo-theme-matery" class="waves-effect waves-light btn" target="_blank">
+                        <i class="fab fa-github-alt"></i>Github
+                    </a>
+                
+            </div>
+            <div class="cover-social-link">
+    <a href="https://github.com/blinkfox" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:1181062873@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=1181062873" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 1181062873" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fas fa-rss"></i>
+    </a>
+
+</div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script>
+    $(function () {
+        let coverSlider = $('.carousel');
+
+        //用户触摸轮播自动 restartPlay 是否生效
+        let initUserPressedOrDraggedActive = false
+
+        //用户触摸轮播自动 restartPlay
+        function initUserPressedOrDragged(instance) {
+            setInterval(() => {
+                if (instance.pressed || instance.dragged) {
+                    // console.log('initUserPressedOrDragged: ',instance.pressed,instance.dragged)
+                    restartPlay()
+                }
+            }, 1000)
+        }
+
+        coverSlider.carousel({
+            duration: Number('120'),
+            fullWidth: true,
+            indicators: 'true' === 'true',
+            onCycleTo() {
+                if (!initUserPressedOrDraggedActive) {
+                    // console.log('initUserPressedOrDraggedActive')
+                    initUserPressedOrDragged(this)
+                    initUserPressedOrDraggedActive = true
+                }
+            },
+        })
+
+        let carouselIntervalId;
         
-          <aside id="sidebar">
-  
-    
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Tags</h3>
-    <div class="widget">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java-GUI/" rel="tag">Java GUI</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaEE/" rel="tag">JavaEE</a></li></ul>
-    </div>
-  </div>
-
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Tag Cloud</h3>
-    <div class="widget tagcloud">
-      <a href="/tags/Java-GUI/" style="font-size: 10px;">Java GUI</a> <a href="/tags/JavaEE/" style="font-size: 10px;">JavaEE</a>
-    </div>
-  </div>
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/05/">May 2020</a></li></ul>
-    </div>
-  </div>
-
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
-    <div class="widget">
-      <ul>
+        // Loop to call the next cover article picture.
+        let autoCarousel = function () {
+            carouselIntervalId = setInterval(function () {
+                coverSlider.carousel('next');
+            }, 5000);
+        };
+        autoCarousel();
         
-          <li>
-            <a href="/2020/05/14/%E5%9F%BA%E4%BA%8EJSP-JavaScript-servlet-jdbc%E6%8A%80%E6%9C%AF%E7%9A%84%E8%87%AA%E5%8A%A9%E5%AD%98%E5%8F%96%E6%AC%BE%E7%B3%BB%E7%BB%9F%E5%B0%8F%E6%A1%88%E4%BE%8B/">基于JSP-JavaScript-servlet-jdbc技术的自助存取款系统小案例</a>
-          </li>
-        
-          <li>
-            <a href="/2020/05/11/Java%E7%88%B1%E5%BF%83%E4%BB%A3%E7%A0%81/">Java爱心代码</a>
-          </li>
-        
-      </ul>
-    </div>
-  </div>
 
-  
-</aside>
+        function restartPlay() {
+            
+            clearInterval(carouselIntervalId);
+            autoCarousel();
+            
+        };
+
         
-      </div>
-      <footer id="footer">
-  
-  <div class="outer">
-    <div id="footer-info" class="inner">
-      &copy; 2020 John Doe<br>
-      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+        // prev and next cover post.
+        $('#prev-cover').click(function () {
+            coverSlider.carousel('prev');
+            restartPlay();
+        });
+        $('#next-cover').click(function () {
+            coverSlider.carousel('next');
+            restartPlay();
+        });
+        
+    });
+</script>
+
+
+
+<main class="content">
+
+    
+    <div id="indexCard" class="index-card">
+        <div class="container ">
+            <div class="card">
+                <div class="card-content">
+                    
+                        <div class="dream">
+    
+    <div class="title center-align">
+        <i class="far fa-lightbulb"></i>&nbsp;&nbsp;我的梦想
     </div>
-  </div>
+    
+    <div class="row">
+        <div class="col l8 offset-l2 m10 offset-m1 s10 offset-s1 center-align text">
+            不是每个人都应该像我这样去建造一座水晶大教堂，但是每个人都应该拥有自己的梦想，设计自己的梦想，追求自己的梦想，实现自己的梦想。梦想是生命的灵魂，是心灵的灯塔，是引导人走向成功的信仰。有了崇高的梦想，只要矢志不渝地追求，梦想就会成为现实，奋斗就会变成壮举，生命就会创造奇迹。——罗伯·舒乐
+        </div>
+    </div>
+</div>
+
+                    
+
+                    
+
+                    
+
+                    
+                    <div id="recommend-sections" class="recommend">
+                        
+
+
+
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+    
+
+    
+
+    <!-- 所有文章卡片 -->
+    <article id="articles" class="container articles">
+        <div class="row article-row">
+            
+            <div class="article col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
+                    <a href="/2020/05/14/%E5%9F%BA%E4%BA%8EJSP-JavaScript-servlet-jdbc%E6%8A%80%E6%9C%AF%E7%9A%84%E8%87%AA%E5%8A%A9%E5%AD%98%E5%8F%96%E6%AC%BE%E7%B3%BB%E7%BB%9F%E5%B0%8F%E6%A1%88%E4%BE%8B/">
+                        <div class="card-image">
+                            
+                            
+                            <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="基于JSP-JavaScript-servlet-jdbc技术的自助存取款系统小案例">
+                            
+                            <span class="card-title">基于JSP-JavaScript-servlet-jdbc技术的自助存取款系统小案例</span>
+                        </div>
+                    </a>
+
+                    <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            
+                                一、语言和环境:JDK1.8、Eclipse、Tomcat7、MySQL5.7
+二、数据库设计：数据库名称：ebank
+数据库表信息，如下表：
+
+三、要求 基于JSP+servlet+jdbc技术的自助存取款系统包含如下功能：
+
+登录功能
+
+                            
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-05-14
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fas fa-user fa-fw"></i>
+                                John Doe
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                    <div class="card-action article-tags">
+                        
+                        <a href="/tags/JavaEE/">
+                            <span class="chip bg-color">JavaEE</span>
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <div class="article col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
+                    <a href="/2020/05/11/Java%E7%88%B1%E5%BF%83%E4%BB%A3%E7%A0%81/">
+                        <div class="card-image">
+                            
+                            
+                            <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="Java爱心代码">
+                            
+                            <span class="card-title">Java爱心代码</span>
+                        </div>
+                    </a>
+
+                    <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            
+                                程序员的浪漫之使用Java GUI编程实现笛卡尔心形曲线代码如下：
+import java.awt.Color;
+import java.awt.Graphics;
+import java.awt.Image;
+import java.aw
+                            
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-05-11
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fas fa-user fa-fw"></i>
+                                Creative
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                    <div class="card-action article-tags">
+                        
+                        <a href="/tags/Java-GUI/">
+                            <span class="chip bg-color">Java GUI</span>
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            
+        </div>
+    </article>
+
+</main>
+
+
+
+
+    <footer class="page-footer bg-color">
+    
+        <link rel="stylesheet" href="/libs/aplayer/APlayer.min.css">
+<style>
+    .aplayer .aplayer-lrc p {
+        
+        display: none;
+        
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 16px !important;
+    }
+
+    .aplayer .aplayer-lrc p.aplayer-lrc-current {
+        
+        display: none;
+        
+        font-size: 15px;
+        color: #42b983;
+    }
+
+    
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body {
+        left: -66px !important;
+    }
+
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body:hover {
+        left: 0px !important;
+    }
+
+    
+</style>
+<div class="">
+    
+    <div class="row">
+        <meting-js class="col l8 offset-l2 m10 offset-m1 s12"
+                   server="netease"
+                   type="playlist"
+                   id="503838841"
+                   fixed='true'
+                   autoplay='false'
+                   theme='#42b983'
+                   loop='all'
+                   order='random'
+                   preload='auto'
+                   volume='0.7'
+                   list-folded='true'
+        >
+        </meting-js>
+    </div>
+</div>
+
+<script src="/libs/aplayer/APlayer.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
+
+    
+    <div class="container row center-align" style="margin-bottom: 0px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            <span id="year">2019</span>
+            <a href="/about" target="_blank">John Doe</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            <br>
+            
+            
+            
+            
+            
+            
+            <span id="busuanzi_container_site_pv">
+                |&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv"
+                    class="white-color"></span>&nbsp;次
+            </span>
+            
+            
+            <span id="busuanzi_container_site_uv">
+                |&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv"
+                    class="white-color"></span>&nbsp;人
+            </span>
+            
+            <br>
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/blinkfox" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:1181062873@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=1181062873" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 1181062873" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fas fa-rss"></i>
+    </a>
+
+</div>
+    </div>
 </footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
     </div>
-    <nav id="mobile-nav">
-  
-    <a href="/" class="mobile-nav-link">Home</a>
-  
-    <a href="/archives" class="mobile-nav-link">Archives</a>
-  
-</nav>
+</div>
+
+<script src="/js/search.js"></script>
+<script type="text/javascript">
+$(function () {
+    searchFunc("/search.xml", 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="/libs/others/clicklove.js" async="async"></script>
+    
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
     
 
-<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+    
 
+    
 
-  
-<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+    
 
-  
-<script src="/fancybox/jquery.fancybox.pack.js"></script>
+    
 
+    
 
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
 
-
-<script src="/js/script.js"></script>
-
-
-
-
-  </div>
 </body>
+
 </html>
